@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liyan Chen</title>
+
+  <link rel="stylesheet" href="https://latex.vercel.app/style.css">
+  <style>
+    .profile-photo {
+      width: 50%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .abstract figcaption {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body id="top" class="text-justify, libertinus">
+  <header>
+    <h1><span class="tile">Liyan Chen</h1>
+    <p class="author">
+      Last Update: Sept 2025
+    </p>
+  </header>
+
+  <div class="abstract">
+    <h2>Abstract</h2>
+    <p>
+        <!-- Liyan Chen is a first-year PhD student at MIT.  -->
+    </p>
+    <figure>
+      <img class="profile-photo" src="assets/LiyanChen.jpg"
+        loading="lazy" alt="Photo of Liyan Chen" />
+      <figcaption>
+        Photo by
+        <a href="http://people.csail.mit.edu/joanne/">Joanne Hanley</a>.
+      </figcaption>
+    </figure>
+  </div>
+
+  <nav role="navigation" class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#CV">CV</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <article>
+        <h2 id="about-me">About Me</h2>
+        <p>
+        I<label for="sn-1" class="sidenote-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="sidenote-toggle" /><span class="sidenote">Email: cliyan at mit dot edu</span>
+        am a first-year PhD student at MIT, where I am fortunate to be advised by <co-author>Yael Tauman Kalai</co-author> and <co-author>Vinod Vaikuntanathan</co-author>. Before that, I completed a B.S. in Yao Class, Tsinghua University. 
+        </p>
+        <p>
+        I am broadly interested in cryptography and theoretical computer science. I am currently excited about proof systems and applying cryptography to other scientific fields such as AI safety.
+        </p>
+        <h2 id="publications">Publications</h2>
+        <ul>
+          <li>
+            <strong>On the Impossibility of SNARGs with Short CRS</strong><br><em>(or: Revisiting Gentry-Wichs Barrier in the Non-adaptive Setting)</em><br>
+            with <co-author>Zhengzhong Jin</co-author><br>
+            FOCS 2025
+          </li>
+          <li>
+            <strong>Succinct Non-interactive Arguments of Proximity</strong><br>
+            with <co-author>Zhengzhong Jin</co-author> and <co-author>Daniel Wichs</co-author><br>
+            STOC 2025
+          </li>
+          <li>
+            <strong>Unambiguous SNARGs for P from LWE with Applications to PPAD Hardness</strong><br>
+            with <co-author>Cody Freitag</co-author>, <co-author>Zhengzhong Jin</co-author> and <co-author>Daniel Wichs</co-author><br>
+            STOC 2025
+          </li>
+          <li>
+            <strong>Setting targets is all you need: Improved order competitive ratio for online selection</strong><br>
+            with <co-author>Nuozhou Sun</co-author> and <co-author>Zhihao Gavin Tang</co-author><br>
+            EC 2024
+          </li>
+        </ul>
+
+        <h2 id="talks">Talks</h2>
+        <ul>
+            <li>
+                <strong>Succinct Non-interactive Arguments of Proximity</strong><br>
+                57th STOC, June 2025<br>
+            </li>
+            <li>
+                <strong>Unambiguous SNARGs for P from LWE with Applications to PPAD Hardness</strong><br>
+                57th STOC, June 2025<br>
+            </li>
+        </ul>
+
+        <h2 id="CV"><a href="files/CV.pdf">CV</a></h2>
+
+
+<!-- 
+      <p>Like this: <button id="dark-mode-toggle">Toggle dark mode</button></p>
+
+      <button id="typeface-toggle">Current typeface: <span id="typeface">Latin Modern</span></button> -->
+
+    </article>
+  </main>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    // const typeFaceToggle = document.getElementById('typeface-toggle')
+    // const typeface = document.getElementById('typeface')
+    // typeFaceToggle.addEventListener('click', () => {
+    //   document.body.classList.toggle('libertinus')
+    //   typeface.textContent = document.body.classList.contains('libertinus') ? 'Libertinus' : 'Latin Modern'
+    // })
+
+    // const darkModeToggle = document.getElementById('dark-mode-toggle')
+    // darkModeToggle.addEventListener('click', () => {
+    //   document.body.classList.toggle('latex-dark')
+    // })
+
+    // Co-author link generation
+    const coauthors = {
+      "Yael Tauman Kalai": "https://www.eecs.mit.edu/people/yael-kalai/",
+      "Vinod Vaikuntanathan": "https://people.csail.mit.edu/vinodv/",
+      "Zhengzhong Jin": "https://zhengzhongjin.github.io",
+      "Daniel Wichs": "https://www.khoury.northeastern.edu/home/wichs/",
+      "Cody Freitag": "https://www.khoury.northeastern.edu/home/cfreitag/index.html",
+      "Nuozhou Sun": "https://sunnuozhou.github.io",
+      "Zhihao Gavin Tang": "http://zhihaotang.com",
+      "Another Co-author": "#" // Example with a placeholder link
+      // Add more co-authors here, like this:
+      // "Jane Doe": "https://example.com/jane-doe"
+    };
+
+    function createAuthorLinks() {
+      document.querySelectorAll('co-author').forEach(el => {
+        const name = el.textContent.trim();
+        if (coauthors[name]) {
+          const link = document.createElement('a');
+          link.href = coauthors[name];
+          link.textContent = name;
+          el.replaceWith(link);
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', createAuthorLinks);
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script async src="prism/prism.js"></script>
+
+</body>
+
+</html>
